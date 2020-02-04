@@ -1,0 +1,16 @@
+.Dice-button button {
+    width: 15em;
+    margin: 0 auto;
+    border: 0px;
+    border-radius: 10px;
+    padding: 1.5em;
+    color: white;
+    background-color: black;
+
+}
+
+.Dice-button button:hover {
+    background-color: darkgray;
+    color: black;
+    cursor: pointer;
+}

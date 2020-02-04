@@ -1,0 +1,7 @@
+.Dice-container {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 30px 0;
+    animation: slide 3s cubic-bezier(1,5,1,5) -1500ms iterat2 normal;
+}
+

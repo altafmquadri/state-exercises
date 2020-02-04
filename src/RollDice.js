@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import './RollDice.css'
 import Die from './Die'
 import Button from './Button'
 
 class RollDice extends Component {
     state = { 
-        first: 1,
         firstDie: 'one',
-        second: 1,
-        secondDie: 'one'
+        secondDie: 'one',
+        isRolling: false
     }
 
     
@@ -19,25 +19,28 @@ class RollDice extends Component {
         let number2 = Math.floor(Math.random() * 6) + 1
         this.setState(
             { 
-                first: number1,
                 firstDie: terms[number1],
-                second: number2,
-                secondDie: terms[number2]
-            });
+                secondDie: terms[number2],
+                isRolling: true
+            }, () => setTimeout(() => this.setState({ isRolling: false }), 1000))
     }
 
     
 
     render() { 
-        return ( 
+        return (
             <div>
-                <Die value={this.state.firstDie}/>
-                <Die value={this.state.secondDie}/>
-                <div>
-                    <Button shake={this.randomNumber}/>
-                </div>
+                <div className="Dice-container">
+                <Die value={this.state.firstDie} isRolling={this.state.isRolling}/>
+                <Die value={this.state.secondDie} isRolling={this.state.isRolling}/>
             </div>
-        );
+                <div className="Dice-button">
+                    <Button 
+                    shake={this.randomNumber}
+                    isRolling={this.state.isRolling}/>
+                </div>
+            </div> 
+        )
     }
 }
 
