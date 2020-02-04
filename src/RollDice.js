@@ -10,8 +10,6 @@ class RollDice extends Component {
         isRolling: false
     }
 
-    
-
     randomNumber = () => {
         console.log('click')
         const terms = ['', 'one', 'two', 'three', 'four', 'five', 'six']
@@ -24,8 +22,6 @@ class RollDice extends Component {
                 isRolling: true
             }, () => setTimeout(() => this.setState({ isRolling: false }), 1000))
     }
-
-    
 
     render() { 
         return (
